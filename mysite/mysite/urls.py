@@ -16,23 +16,30 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views # importing the view file created by me
+from .views import index
+
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', index),
+
     
     
-    path('',views.home,name='home'),
+    path('home',views.home,name='home'),
     # default page (127.0.0.1:8000)
     
-    path('index',views.index,name='index'),
+    path('',views.index,name='index'),
     
      path('about',views.about,name='about'),
       #giving the path of index function defined in views file
     #first argument of path is the append of the url (e.g. 127.0.0.1:8000/about)
     #third argument is the name of the path
      
-     path('google',views.open_google,name='google')
+     path('google',views.open_google,name='google'),
      
+     path('removepunc',views.removepunc,name='removepunc'),
      
+   
      
     
 ]
