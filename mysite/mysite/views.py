@@ -25,14 +25,16 @@ def open_google(request):
 
 def removepunc(request):
     # getting the data (text) from the form
-    djtext = request.GET.get('text','default')
+    
+    # here also we will be using post method
+    djtext = request.POST.get('text','default')
     
     #check checkbox values setting it to off by default
-    rmpunc = request.GET.get('removepunc','off')
+    rmpunc = request.POST.get('removepunc','off')
     
-    fullcaps = request.GET.get('fullcaps','off')
+    fullcaps = request.POST.get('fullcaps','off')
     
-    charcount = request.GET.get('charcount','off')
+    charcount = request.POST.get('charcount','off')
     
     
     # print(rmpunc)

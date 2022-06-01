@@ -55,8 +55,11 @@
     </nav>
 
     <br>
+    <!-- by default method is get so now we will set it to post method -->
+    <!-- we have used post method so that there is no mal attack by any of the attackers since in post method the data will be sent with some extra data so that it is secured and not visible in the url as well -->
     <div class="container">
-        <form action="/removepunc" method="get">
+        <form action="/removepunc" method="post"> {% csrf_token %}
+            <!-- this is the token which is used to prevent the malicious attack -->
             <h1 style="text-align: center" display-1>Here you can edit your text</h1>
             <br>
 
